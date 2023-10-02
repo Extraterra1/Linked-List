@@ -10,7 +10,7 @@ class LinkedList {
     this.list = new Node(value, this.list);
   }
   at(i, count = 0, currentItem = this.list) {
-    if (i < 0) return 'invalid index';
+    if (i < 0 || i >= this.size) return 'invalid index';
     if (count === i || currentItem === null) return currentItem;
     count++;
     return this.at(i, count, currentItem.nextNode);
